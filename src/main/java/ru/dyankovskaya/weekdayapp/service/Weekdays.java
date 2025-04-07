@@ -19,5 +19,11 @@ public enum Weekdays {
         return russianName;
     }
 
-
+    public static String translateWeekdays(String engWeekday) {
+        try {
+            return Weekdays.valueOf(engWeekday.toUpperCase()).getRussianName();
+        } catch (IllegalArgumentException e) {
+            return "Такого дня недели не существует! Не выдумывай!";
+        }
+    }
 }
